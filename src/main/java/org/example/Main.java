@@ -73,12 +73,14 @@ public class Main {
                     System.out.print("Enter which new pokemon has to be raised: ");
                     inputPokemonName = scannerTwo.nextLine();
                     pokemon.addPokemon(inputPokemonName);
+                    break;
                 case 8:
                     System.out.print("Enter First Name of new trainer: ");
                     inputFirstName = scannerTwo.nextLine();
                     System.out.print("Enter his Last Name: ");
                     inputLastName = scannerTwo.nextLine();
                     trainer.addTrainer(inputFirstName, inputLastName);
+                    break;
                 case 9:
                     System.out.println("Goodbye!");
             }
