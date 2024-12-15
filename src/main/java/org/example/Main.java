@@ -26,6 +26,8 @@ public class Main {
             System.out.println("4. Print all Trainers by pokemons count");
             System.out.println("5. Print all free Pokemons");
             System.out.println("6. Catch Pokemon by trainer (recommended using number 5 first)");
+            System.out.println("7. Raise new Pokemon");
+            System.out.println("8. Hire new Trainer");
             System.out.println("9. Exit");
 
             try {
@@ -67,6 +69,16 @@ public class Main {
                     inputPokemonName = scannerTwo.nextLine();
                     pokemon.catchPokemon(inputFirstName, inputLastName, inputPokemonName);
                     break;
+                case 7:
+                    System.out.print("Enter which new pokemon has to be raised: ");
+                    inputPokemonName = scannerTwo.nextLine();
+                    pokemon.addPokemon(inputPokemonName);
+                case 8:
+                    System.out.print("Enter First Name of new trainer: ");
+                    inputFirstName = scannerTwo.nextLine();
+                    System.out.print("Enter his Last Name: ");
+                    inputLastName = scannerTwo.nextLine();
+                    trainer.addTrainer(inputFirstName, inputLastName);
                 case 9:
                     System.out.println("Goodbye!");
             }
