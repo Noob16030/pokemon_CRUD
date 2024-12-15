@@ -1,6 +1,7 @@
 package org.example;
 
 import java.sql.SQLException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
         String inputFirstName;
         String inputLastName;
         String inputPokemonName;
-        int inputInt = 0;
+        int inputInt = -1;
 
         System.out.println("Welcome in my small pokemon manager!");
         while (inputInt != 9) {
@@ -27,9 +28,17 @@ public class Main {
             System.out.println("6. Catch Pokemon by trainer (recommended using number 5 first)");
             System.out.println("9. Exit");
 
-            inputInt = scannerOne.nextInt();
+            try {
+                inputInt = scannerOne.nextInt();
+            } catch (InputMismatchException a) {
+                System.out.println("Wrong input!");
+                scannerOne.next();
+                inputInt = -1;
+            }
 
             switch (inputInt) {
+                case -1:
+                    break;
                 case 1:
                     pokemon.printAllPokemons();
                     break;
